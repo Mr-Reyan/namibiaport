@@ -109,12 +109,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mega Menu (Ports) */
 .mega-menu {
-    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98);
+    position: fixed; top: 90px; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98);
     background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
     padding: 32px; min-width: 800px; max-width: 90vw; opacity: 0; visibility: hidden;
     transition: var(--transition); border: 1px solid rgba(0,0,0,0.05); max-height: 70vh; overflow-y: auto; z-index: 999;
 }
-.has-dropdown:hover .mega-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(4px) scale(1); }
+.has-dropdown:hover .mega-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0) scale(1); }
 .mega-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--sand-dark); }
 .mega-header-title { font-family: var(--font-heading); font-size: 1.1rem; color: var(--navy-deep); font-weight: 700; }
 .mega-search { display: flex; align-items: center; gap: 8px; background: var(--sand); padding: 8px 16px; border-radius: var(--radius-full); }
@@ -137,14 +137,45 @@ h1, h2, h3, h4, h5, h6 {
 .footer-links a:hover { color: var(--amber); transform: translateX(5px); }
 
 /* Footer Contact Card */
-.footer-contact-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 32px; border-radius: var(--radius-md); }
-.footer-contact-card li { display: flex; gap: 16px; margin-bottom: 20px; font-size: 0.95rem; color: var(--sand-dark); align-items: flex-start; }
-.footer-contact-card li:last-child { margin-bottom: 0; }
-.footer-contact-card i { color: var(--amber); margin-top: 4px; font-size: 1.1rem; flex-shrink: 0; }
+.footer-contact-card { 
+  background: rgba(255,255,255,0.03); 
+  border: 1px solid rgba(255,255,255,0.05); 
+  padding: 40px 32px; 
+  border-radius: var(--radius-md); 
+}
+.footer-contact-card li { 
+  display: flex; 
+  gap: 16px; 
+  margin-bottom: 24px; 
+  font-size: 0.95rem; 
+  color: var(--sand-dark); 
+  align-items: flex-start; 
+}
+.footer-contact-card li:last-child { 
+  margin-bottom: 0; 
+}
+.footer-contact-card i { 
+  color: var(--amber); 
+  margin-top: 4px; 
+  font-size: 1.1rem; 
+  flex-shrink: 0; 
+}
 .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted); }
 
 /* Custom WhatsApp Button */
-.hero-whatsapp-bar { display: inline-flex; align-items: center; gap: 12px; background: var(--navy-deep); padding: 12px 24px; border-radius: var(--radius-full); transition: var(--transition); text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.2); max-width: fit-content; margin-top: 10px; }
+.hero-whatsapp-bar { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 12px; 
+  background: var(--navy-deep); 
+  padding: 16px 28px; 
+  border-radius: var(--radius-full); 
+  transition: var(--transition); 
+  text-decoration: none; 
+  border: 1px solid rgba(245, 158, 11, 0.2); 
+  max-width: fit-content; 
+  margin-top: 10px; 
+}
 .hero-whatsapp-bar:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15); border-color: var(--amber); }
 .hero-whatsapp-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #25D366; border-radius: 50%; color: white; flex-shrink: 0; }
 .hero-whatsapp-icon svg { width: 18px; height: 18px; }
