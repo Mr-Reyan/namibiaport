@@ -407,11 +407,10 @@ def main():
     print(f"📊 Found {len(df)} total ports in Excel")
     print(f"📝 Columns: {list(df.columns)}")
     
-    # Skip the first row (Dar Es Salaam which is row 0, index 0)
-    # Generate pages for rows 1-48 (indices 1-48, which is 48 pages)
-    ports_to_generate = df.iloc[1:49]  # This gets rows with index 1 through 48 (48 rows total)
+    # Generate ALL pages including Dar Es Salaam (rows 0-48, which is 49 pages)
+    ports_to_generate = df.iloc[0:49]  # This gets all rows from index 0 through 48 (49 rows total)
     
-    print(f"\n✨ Generating {len(ports_to_generate)} port pages (skipping first row)...")
+    print(f"\n✨ Generating {len(ports_to_generate)} port pages (ALL ports including Dar Es Salaam)...")
     print(f"   First page to generate: {ports_to_generate.iloc[0]['Page Name']}")
     print(f"   Last page to generate: {ports_to_generate.iloc[-1]['Page Name']}")
     

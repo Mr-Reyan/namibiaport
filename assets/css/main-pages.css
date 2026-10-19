@@ -138,9 +138,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer Contact Card */
 .footer-contact-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 32px; border-radius: var(--radius-md); }
-.footer-contact-card li { display: flex; gap: 16px; margin-bottom: 20px; font-size: 0.95rem; color: var(--sand-dark); }
+.footer-contact-card li { display: flex; gap: 16px; margin-bottom: 20px; font-size: 0.95rem; color: var(--sand-dark); align-items: flex-start; }
 .footer-contact-card li:last-child { margin-bottom: 0; }
-.footer-contact-card i { color: var(--amber); margin-top: 4px; font-size: 1.1rem; }
+.footer-contact-card i { color: var(--amber); margin-top: 4px; font-size: 1.1rem; flex-shrink: 0; }
 .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted); }
 
 /* Custom WhatsApp Button */
@@ -168,11 +168,11 @@ h1, h2, h3, h4, h5, h6 {
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .footer-contact-card { grid-column: span 2; }
     
-    .nav-toggle { display: block; }
+    .nav-toggle { display: block; z-index: 1001; position: relative; }
     .primary-nav {
-        position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px);
-        background: var(--white); flex-direction: column; padding: 32px 24px;
-        transition: var(--transition); border-top: 1px solid rgba(0,0,0,0.05); overflow-y: auto;
+        position: fixed; top: 0; left: -100%; width: 100vw; height: 100vh;
+        background: var(--white); flex-direction: column; padding: 100px 24px 40px;
+        transition: var(--transition); overflow-y: auto; z-index: 999;
     }
     .primary-nav.open { left: 0; }
     .nav-list { flex-direction: column; width: 100%; align-items: flex-start; gap: 16px; }
