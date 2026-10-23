@@ -51,12 +51,12 @@
             --text-main: #334155;
             --text-muted: #64748B;
             --white: #FFFFFF;
-            
+
             --radius-sm: 8px;
             --radius-md: 16px;
             --radius-lg: 24px;
             --radius-full: 9999px;
-            
+
             --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.05);
             --shadow-md: 0 12px 24px -6px rgba(10, 22, 40, 0.1);
             --shadow-lg: 0 24px 48px -12px rgba(10, 22, 40, 0.2);
@@ -67,8 +67,18 @@
             --font-body: 'Inter', sans-serif;
         }
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--text-main);
@@ -77,85 +87,288 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        img { max-width: 100%; height: auto; display: block; }
-        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
         /* Typography */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             font-weight: 700;
             line-height: 1.15;
             color: var(--navy-deep);
             letter-spacing: -0.02em;
         }
-        .section-title { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
 
         /* Buttons */
         .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 14px 32px; font-family: var(--font-body); font-size: 1rem;
-            font-weight: 600; border-radius: var(--radius-sm); border: none;
-            cursor: pointer; transition: var(--transition); gap: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            gap: 10px;
         }
+
         .btn-primary {
-            background-color: var(--amber); color: var(--navy-deep);
+            background-color: var(--amber);
+            color: var(--navy-deep);
             box-shadow: var(--shadow-amber);
         }
-        .btn-primary:hover { background-color: var(--amber-light); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(245, 158, 11, 0.4); }
+
+        .btn-primary:hover {
+            background-color: var(--amber-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(245, 158, 11, 0.4);
+        }
 
         /* =========================================
            HEADER / NAVBAR
         ========================================= */
         .site-header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(10, 22, 40, 0.05); transition: var(--transition);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(10, 22, 40, 0.05);
+            transition: var(--transition);
         }
-        .site-header.scrolled { box-shadow: var(--shadow-sm); background: var(--white); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo img { height: 48px; width: auto; }
-        
-        .nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--navy-deep); }
-        .primary-nav { display: flex; align-items: center; gap: 32px; }
-        .nav-list { display: flex; align-items: center; gap: 24px; }
-        .nav-link { font-size: 0.95rem; font-weight: 500; color: var(--navy); position: relative; }
+
+        .site-header.scrolled {
+            box-shadow: var(--shadow-sm);
+            background: var(--white);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--navy-deep);
+        }
+
+        .primary-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--navy);
+            position: relative;
+        }
+
         .nav-link::after {
-            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-            background: var(--amber); transition: var(--transition);
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--amber);
+            transition: var(--transition);
         }
-        .nav-link:hover::after, .nav-item.active .nav-link::after { width: 100%; }
+
+        .nav-link:hover::after,
+        .nav-item.active .nav-link::after {
+            width: 100%;
+        }
 
         /* Dropdowns */
-        .has-dropdown { position: relative; }
-        .dropdown-menu {
-            position: absolute; top: 100%; left: 0; background: var(--white);
-            box-shadow: var(--shadow-md); border-radius: var(--radius-md); padding: 16px;
-            min-width: 250px; opacity: 0; visibility: hidden; transform: translateY(10px);
-            transition: var(--transition); border: 1px solid rgba(0,0,0,0.05); max-height: 400px; overflow-y: auto;
+        .has-dropdown {
+            position: relative;
         }
-        .has-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(4px); }
-        .dropdown-menu a { display: block; padding: 10px 16px; font-size: 0.9rem; color: var(--text-main); border-radius: var(--radius-sm); }
-        .dropdown-menu a:hover { background: var(--sand-dark); color: var(--navy-deep); padding-left: 20px; }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            min-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(4px);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            border-radius: var(--radius-sm);
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--sand-dark);
+            color: var(--navy-deep);
+            padding-left: 20px;
+        }
 
         /* Mega Menu */
         .mega-menu {
-            position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px) scale(0.98);
-            background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
-            padding: 32px; min-width: 800px; max-width: 90vw; opacity: 0; visibility: hidden;
-            transition: var(--transition); border: 1px solid rgba(0,0,0,0.05); max-height: 70vh; overflow-y: auto; z-index: 999;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px) scale(0.98);
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 32px;
+            min-width: 800px;
+            max-width: 90vw;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            max-height: 70vh;
+            overflow-y: auto;
+            z-index: 999;
         }
-        .has-dropdown:hover .mega-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(4px) scale(1); }
-        .mega-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--sand-dark); }
-        .mega-header-title { font-family: var(--font-heading); font-size: 1.1rem; color: var(--navy-deep); font-weight: 700; }
-        .mega-search { display: flex; align-items: center; gap: 8px; background: var(--sand); padding: 8px 16px; border-radius: var(--radius-full); }
-        .mega-search input { border: none; background: transparent; font-size: 0.9rem; outline: none; width: 180px; font-family: var(--font-body); }
-        .mega-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
-        .mega-group h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amber); margin-bottom: 12px; }
-        .mega-group a { display: block; padding: 6px 0; font-size: 0.85rem; color: var(--text-muted); }
-        .mega-group a:hover { color: var(--navy-deep); padding-left: 6px; }
+
+        .has-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(4px) scale(1);
+        }
+
+        .mega-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--sand-dark);
+        }
+
+        .mega-header-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+        }
+
+        .mega-search {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sand);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+        }
+
+        .mega-search input {
+            border: none;
+            background: transparent;
+            font-size: 0.9rem;
+            outline: none;
+            width: 180px;
+            font-family: var(--font-body);
+        }
+
+        .mega-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        .mega-group h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--amber);
+            margin-bottom: 12px;
+        }
+
+        .mega-group a {
+            display: block;
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .mega-group a:hover {
+            color: var(--navy-deep);
+            padding-left: 6px;
+        }
 
         /* =========================================
            SUBPAGE HERO
@@ -171,39 +384,96 @@
             justify-content: center;
             text-align: center;
         }
-        .page-hero-bg-wrapper { position: absolute; inset: 0; z-index: 1; }
+
+        .page-hero-bg-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
         .page-hero-bg {
-            width: 100%; height: 100%; object-fit: cover; opacity: 0.25;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
             mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         }
+
         .page-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.6) 100%); z-index: 2;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.6) 100%);
+            z-index: 2;
         }
-        .page-hero-content { position: relative; z-index: 3; max-width: 800px; margin: 0 auto; }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .page-hero .breadcrumb {
-            display: flex; justify-content: center; align-items: center; gap: 8px;
-            font-size: 0.85rem; color: var(--sand-dark); margin-bottom: 24px; font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--sand-dark);
+            margin-bottom: 24px;
+            font-weight: 600;
         }
-        .page-hero .breadcrumb a { color: var(--amber); text-decoration: none; transition: var(--transition); }
-        .page-hero .breadcrumb a:hover { text-decoration: underline; }
+
+        .page-hero .breadcrumb a {
+            color: var(--amber);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .page-hero .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
         .page-hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem); color: var(--white) !important;
-            margin-bottom: 20px; font-family: var(--font-heading); line-height: 1.1;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white) !important;
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+            line-height: 1.1;
             animation: fadeUp 0.8s ease forwards;
         }
+
         .page-hero-desc {
-            font-size: 1.15rem; color: var(--sand-dark) !important; max-width: 600px;
-            margin: 0 auto; line-height: 1.7; animation: fadeUp 1s ease forwards;
+            font-size: 1.15rem;
+            color: var(--sand-dark) !important;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+            animation: fadeUp 1s ease forwards;
         }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* =========================================
            PREMIUM ACCORDION SERVICES LAYOUT
         ========================================= */
-        .services-section { padding: 80px 0 100px; background: var(--sand-dark); }
-        
+        .services-section {
+            padding: 80px 0 100px;
+            background: var(--sand-dark);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -217,7 +487,7 @@
             background: var(--white);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
             overflow: hidden;
             transition: var(--transition);
             position: relative;
@@ -227,7 +497,10 @@
         .service-accordion::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
             background: var(--amber);
             transform: scaleY(0);
             transform-origin: top;
@@ -240,7 +513,7 @@
             transform: scaleY(1);
         }
 
-        .service-accordion:hover, 
+        .service-accordion:hover,
         .service-accordion[open] {
             box-shadow: var(--shadow-lg);
             border-color: rgba(245, 158, 11, 0.2);
@@ -253,14 +526,15 @@
             justify-content: space-between;
             padding: 32px 40px;
             cursor: pointer;
-            list-style: none; /* Hide default triangle */
+            list-style: none;
+            /* Hide default triangle */
             font-family: var(--font-heading);
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--navy-deep);
             transition: var(--transition);
         }
-        
+
         .service-accordion summary::-webkit-details-marker {
             display: none;
         }
@@ -316,8 +590,15 @@
         }
 
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .content-inner {
@@ -398,74 +679,282 @@
         /* =========================================
            FOOTER
         ========================================= */
-        .site-footer { background: var(--navy-deep); color: var(--text-muted); padding: 80px 0 0; position: relative; overflow: hidden; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .footer-brand img { height: 56px; margin-bottom: 24px; }
-        .footer-brand p { color: var(--sand-dark); font-size: 0.95rem; line-height: 1.7; }
-        
-        .footer-col h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 24px; font-family: var(--font-heading); letter-spacing: 0.05em; text-transform: uppercase; }
-        .footer-links { display: flex; flex-direction: column; gap: 12px; }
-        .footer-links a { color: var(--sand-dark); font-size: 0.95rem; display: inline-block; }
-        .footer-links a:hover { color: var(--amber); transform: translateX(5px); }
+        .site-footer {
+            background: var(--navy-deep);
+            color: var(--text-muted);
+            padding: 80px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-brand img {
+            height: 56px;
+            margin-bottom: 24px;
+        }
+
+        .footer-brand p {
+            color: var(--sand-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            font-family: var(--font-heading);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--sand-dark);
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--amber);
+            transform: translateX(5px);
+        }
 
         /* Footer Contact Card */
-        .footer-contact-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 32px; border-radius: var(--radius-md); }
-        .footer-contact-card li { display: flex; gap: 16px; margin-bottom: 20px; font-size: 0.95rem; color: var(--sand-dark); }
-        .footer-contact-card li:last-child { margin-bottom: 0; }
-        .footer-contact-card i { color: var(--amber); margin-top: 4px; font-size: 1.1rem; }
-        .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted); }
+        .footer-contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px;
+            border-radius: var(--radius-md);
+        }
+
+        .footer-contact-card li {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--sand-dark);
+        }
+
+        .footer-contact-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-contact-card i {
+            color: var(--amber);
+            margin-top: 4px;
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
 
         /* Custom WhatsApp Button */
-        .hero-whatsapp-bar { display: inline-flex; align-items: center; gap: 12px; background: var(--navy-deep); padding: 12px 24px; border-radius: var(--radius-full); transition: var(--transition); text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.2); max-width: fit-content; margin-top: 10px; }
-        .hero-whatsapp-bar:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15); border-color: var(--amber); }
-        .hero-whatsapp-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #25D366; border-radius: 50%; color: white; flex-shrink: 0; }
-        .hero-whatsapp-icon svg { width: 18px; height: 18px; }
-        .hero-whatsapp-tag { color: #25D366; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        .hero-whatsapp-num { color: var(--amber); font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
-        .hero-whatsapp-arrow { color: var(--amber); font-size: 1.1rem; font-weight: 700; margin-left: 4px; transition: transform 0.3s ease; }
-        .hero-whatsapp-bar:hover .hero-whatsapp-arrow { transform: translateX(4px); }
+        .hero-whatsapp-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--navy-deep);
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+            text-decoration: none;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            max-width: fit-content;
+            margin-top: 10px;
+        }
+
+        .hero-whatsapp-bar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+            border-color: var(--amber);
+        }
+
+        .hero-whatsapp-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #25D366;
+            border-radius: 50%;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .hero-whatsapp-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-whatsapp-tag {
+            color: #25D366;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-whatsapp-num {
+            color: var(--amber);
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .hero-whatsapp-arrow {
+            color: var(--amber);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-left: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-whatsapp-bar:hover .hero-whatsapp-arrow {
+            transform: translateX(4px);
+        }
 
         /* =========================================
            RESPONSIVE
         ========================================= */
         @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .footer-contact-card { grid-column: span 2; }
-            
-            .nav-toggle { display: block; }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-contact-card {
+                grid-column: span 2;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
             .primary-nav {
-                position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px);
-                background: var(--white); flex-direction: column; padding: 32px 24px;
-                transition: var(--transition); border-top: 1px solid rgba(0,0,0,0.05); overflow-y: auto;
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 32px 24px;
+                transition: var(--transition);
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                overflow-y: auto;
             }
-            .primary-nav.open { left: 0; }
-            .nav-list { flex-direction: column; width: 100%; align-items: flex-start; gap: 16px; }
-            .nav-link { font-size: 1.1rem; width: 100%; display: block; }
-            
-            .dropdown-menu, .mega-menu {
-                position: static !important; transform: none !important; opacity: 1 !important;
-                visibility: visible !important; box-shadow: none !important; border: none !important;
-                padding: 8px 0 8px 16px !important; max-height: 0; overflow: hidden;
-                transition: max-height 0.4s ease; display: block !important; min-width: auto !important; width: 100% !important;
+
+            .primary-nav.open {
+                left: 0;
             }
-            .has-dropdown.open .dropdown-menu, .has-dropdown.open .mega-menu { max-height: 800px !important; }
-            
-            .mega-header { padding: 12px 0; margin-bottom: 8px; flex-direction: column; align-items: flex-start; gap: 12px; }
-            .mega-search { width: 100%; }
-            .mega-search input { width: 100%; }
-            .mega-grid { grid-template-columns: 1fr; gap: 12px; }
-            
-            .content-inner { grid-template-columns: 1fr; }
+
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .nav-link {
+                font-size: 1.1rem;
+                width: 100%;
+                display: block;
+            }
+
+            .dropdown-menu,
+            .mega-menu {
+                position: static !important;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 8px 0 8px 16px !important;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+                display: block !important;
+                min-width: auto !important;
+                width: 100% !important;
+            }
+
+            .has-dropdown.open .dropdown-menu,
+            .has-dropdown.open .mega-menu {
+                max-height: 800px !important;
+            }
+
+            .mega-header {
+                padding: 12px 0;
+                margin-bottom: 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .mega-search {
+                width: 100%;
+            }
+
+            .mega-search input {
+                width: 100%;
+            }
+
+            .mega-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .content-inner {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .service-accordion summary { padding: 24px; font-size: 1.2rem; }
-            .content-inner { padding: 24px; }
-            .items-grid { grid-template-columns: 1fr; }
-            
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-            .footer-contact-card { grid-column: span 1; }
-            .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
+            .service-accordion summary {
+                padding: 24px;
+                font-size: 1.2rem;
+            }
+
+            .content-inner {
+                padding: 24px;
+            }
+
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-contact-card {
+                grid-column: span 1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
         }
     </style>
 </head>
@@ -487,10 +976,11 @@
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    
+
                     <!-- Services Dropdown -->
                     <li class="nav-item has-dropdown active">
-                        <a class="nav-link" href="services.html">Services <i class="fas fa-chevron-down" style="font-size:0.7rem; margin-left:4px;"></i></a>
+                        <a class="nav-link" href="services.html">Services <i class="fas fa-chevron-down"
+                                style="font-size:0.7rem; margin-left:4px;"></i></a>
                         <div class="dropdown-menu">
                             <a href="#provisions">Provisions Supply</a>
                             <a href="#bonded">Bonded Stores</a>
@@ -507,10 +997,11 @@
                             <a href="#urgent">Urgent Supply</a>
                         </div>
                     </li>
-                    
+
                     <!-- Ports Mega Menu -->
                     <li class="nav-item has-dropdown">
-                        <a class="nav-link" href="javascript:void(0)">Ports <i class="fas fa-chevron-down" style="font-size:0.7rem; margin-left:4px;"></i></a>
+                        <a class="nav-link" href="javascript:void(0)">Ports <i class="fas fa-chevron-down"
+                                style="font-size:0.7rem; margin-left:4px;"></i></a>
                         <div class="mega-menu">
                             <div class="mega-header">
                                 <div class="mega-header-title">Global Port Network</div>
@@ -524,10 +1015,11 @@
                             </div>
                         </div>
                     </li>
-                    
+
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <a class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" href="request-quote.html">Get Quote</a>
+                <a class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" href="request-quote.html">Get
+                    Quote</a>
             </nav>
         </div>
     </header>
@@ -536,7 +1028,7 @@
         <!-- SUBPAGE HERO -->
         <section class="page-hero">
             <div class="page-hero-bg-wrapper">
-                <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop" alt="Services Background" class="page-hero-bg">
+                <img src="assets/imgs/ship-picture-main.jpg" alt="Services Background" class="page-hero-bg">
             </div>
             <div class="container page-hero-content">
                 <ul class="breadcrumb">
@@ -545,7 +1037,8 @@
                     <li>Services Catalog</li>
                 </ul>
                 <h1 class="page-hero-title">Ship Supply Services in Namibia</h1>
-                <p class="page-hero-desc">Click any category below to explore the complete range of marine supply services available at all Namibian ports.</p>
+                <p class="page-hero-desc">Click any category below to explore the complete range of marine supply
+                    services available at all Namibian ports.</p>
             </div>
         </section>
 
@@ -566,8 +1059,19 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port supplies fresh, chilled, frozen, and dry provisions to support vessel crews and galley requirements across Walvis Bay and Namibian ports. Provision orders can be prepared according to crew nationality, vessel requirements, requested brands, and pack sizes. High-quality food provision supply ensures the crew remains well-fed and operational throughout the voyage. Sourcing reliable ship provisions in Namibia requires careful attention to cold-chain logistics and shelf-life management. The procurement process guarantees that all food stores, including fresh produce, meats, and dry goods, meet stringent hygiene standards before delivery to the vessel. Fast coordination of food supply directly to the berth or anchorage minimizes disruption to the vessel's schedule.</p>
-                                    <a href="request-quote.html?category=provisions" class="btn btn-primary">Order Provisions <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port supplies fresh, chilled, frozen, and dry provisions to
+                                        support vessel crews and galley requirements across Walvis Bay and Namibian
+                                        ports. Provision orders can be prepared according to crew nationality, vessel
+                                        requirements, requested brands, and pack sizes. High-quality food provision
+                                        supply ensures the crew remains well-fed and operational throughout the voyage.
+                                        Sourcing reliable ship provisions in Namibia requires careful attention to
+                                        cold-chain logistics and shelf-life management. The procurement process
+                                        guarantees that all food stores, including fresh produce, meats, and dry goods,
+                                        meet stringent hygiene standards before delivery to the vessel. Fast
+                                        coordination of food supply directly to the berth or anchorage minimizes
+                                        disruption to the vessel's schedule.</p>
+                                    <a href="request-quote.html?category=provisions" class="btn btn-primary">Order
+                                        Provisions <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -609,8 +1113,19 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibiya Port bonded and duty-free provisions can be supplied subject to applicable customs and Namibian port regulations. Ship Chandler Namibia Port coordinates necessary customs clearances and delivery permits directly to the vessel. A reliable bond store supply chain ensures crew welfare items and duty-free goods are delivered efficiently and compliantly. Navigating local customs procedures for bonded stores requires experienced coordination. The vessel supply service manages all necessary documentation to guarantee a smooth transfer of tobacco, confectionery, and personal care items. Strict adherence to port authority guidelines ensures that the bond store supply process is seamless, allowing the crew to receive essential welfare products without delays during the port call.</p>
-                                    <a href="request-quote.html?category=bonded" class="btn btn-primary">Order Bonded Stores <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibiya Port bonded and duty-free provisions can be supplied
+                                        subject to applicable customs and Namibian port regulations. Ship Chandler
+                                        Namibia Port coordinates necessary customs clearances and delivery permits
+                                        directly to the vessel. A reliable bond store supply chain ensures crew welfare
+                                        items and duty-free goods are delivered efficiently and compliantly. Navigating
+                                        local customs procedures for bonded stores requires experienced coordination.
+                                        The vessel supply service manages all necessary documentation to guarantee a
+                                        smooth transfer of tobacco, confectionery, and personal care items. Strict
+                                        adherence to port authority guidelines ensures that the bond store supply
+                                        process is seamless, allowing the crew to receive essential welfare products
+                                        without delays during the port call.</p>
+                                    <a href="request-quote.html?category=bonded" class="btn btn-primary">Order Bonded
+                                        Stores <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -624,7 +1139,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-bonded.jpg" alt="Bonded Supply">
                             </div>
@@ -643,8 +1158,19 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibiya Port deck department can source and supply a wide range of deck consumables and equipment for vessels in Namibia. Deck store products can be quoted according to IMPA references, dimensions, SWL, material specifications, required certificates, or preferred manufacturers. High-quality deck supplies are essential for safe mooring, cargo handling, and routine vessel maintenance. Ensuring the availability of heavy-duty mooring ropes, wire ropes, and lifting accessories is critical for maritime safety. The ship chandler service verifies that all deck equipment meets required load capacities and safety certifications. From marine paints and coatings to cargo securing materials, the comprehensive deck supply ensures the vessel is fully equipped for challenging operational environments.</p>
-                                    <a href="request-quote.html?category=deck" class="btn btn-primary">Order Deck Stores <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibiya Port deck department can source and supply a wide range of
+                                        deck consumables and equipment for vessels in Namibia. Deck store products can
+                                        be quoted according to IMPA references, dimensions, SWL, material
+                                        specifications, required certificates, or preferred manufacturers. High-quality
+                                        deck supplies are essential for safe mooring, cargo handling, and routine vessel
+                                        maintenance. Ensuring the availability of heavy-duty mooring ropes, wire ropes,
+                                        and lifting accessories is critical for maritime safety. The ship chandler
+                                        service verifies that all deck equipment meets required load capacities and
+                                        safety certifications. From marine paints and coatings to cargo securing
+                                        materials, the comprehensive deck supply ensures the vessel is fully equipped
+                                        for challenging operational environments.</p>
+                                    <a href="request-quote.html?category=deck" class="btn btn-primary">Order Deck Stores
+                                        <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -669,7 +1195,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-deck-stores.jpg" alt="Deck Supply">
                             </div>
@@ -688,8 +1214,20 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port supports engine departments with routine consumables, tools, and technical materials for main engines, generators, and auxiliary machinery. For technical requirements, customers are encouraged to provide maker, model, serial number, part number, drawings, or photographs to ensure accurate sourcing. Quality engine stores and spare parts minimize downtime and maintain vessel operational efficiency. Sourcing reliable engine room consumables, such as filters, gaskets, and mechanical seals, is vital for continuous vessel performance. The technical procurement team assists in identifying exact machinery components, ensuring compatibility with onboard systems. Access to premium lubricants, hydraulic fittings, and workshop consumables keeps the engine department fully operational during transit and port stays.</p>
-                                    <a href="request-quote.html?category=engine" class="btn btn-primary">Order Engine Stores <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port supports engine departments with routine consumables,
+                                        tools, and technical materials for main engines, generators, and auxiliary
+                                        machinery. For technical requirements, customers are encouraged to provide
+                                        maker, model, serial number, part number, drawings, or photographs to ensure
+                                        accurate sourcing. Quality engine stores and spare parts minimize downtime and
+                                        maintain vessel operational efficiency. Sourcing reliable engine room
+                                        consumables, such as filters, gaskets, and mechanical seals, is vital for
+                                        continuous vessel performance. The technical procurement team assists in
+                                        identifying exact machinery components, ensuring compatibility with onboard
+                                        systems. Access to premium lubricants, hydraulic fittings, and workshop
+                                        consumables keeps the engine department fully operational during transit and
+                                        port stays.</p>
+                                    <a href="request-quote.html?category=engine" class="btn btn-primary">Order Engine
+                                        Stores <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -715,7 +1253,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-engine-stores.jpg" alt="Engine Supply">
                             </div>
@@ -734,8 +1272,18 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Namibia Ship Port provides everyday consumables and equipment required by the accommodation and catering departments on merchant vessels calling at Namibian ports. Cabin and galley stores are sourced to ensure crew comfort and hygiene standards are maintained throughout the vessel's voyage. High-quality accommodation supplies, including bed linen, towels, and mattresses, contribute significantly to crew morale. The vessel supply service also ensures the galley is well-equipped with commercial-grade cookware, utensils, and tableware. Providing essential cleaning products, laundry detergents, and toiletries supports a sanitary living environment, allowing the crew to rest and recover effectively between shifts.</p>
-                                    <a href="request-quote.html?category=cabin" class="btn btn-primary">Order Cabin & Galley <i class="fas fa-arrow-right"></i></a>
+                                    <p>Namibia Ship Port provides everyday consumables and equipment required by the
+                                        accommodation and catering departments on merchant vessels calling at Namibian
+                                        ports. Cabin and galley stores are sourced to ensure crew comfort and hygiene
+                                        standards are maintained throughout the vessel's voyage. High-quality
+                                        accommodation supplies, including bed linen, towels, and mattresses, contribute
+                                        significantly to crew morale. The vessel supply service also ensures the galley
+                                        is well-equipped with commercial-grade cookware, utensils, and tableware.
+                                        Providing essential cleaning products, laundry detergents, and toiletries
+                                        supports a sanitary living environment, allowing the crew to rest and recover
+                                        effectively between shifts.</p>
+                                    <a href="request-quote.html?category=cabin" class="btn btn-primary">Order Cabin &
+                                        Galley <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -757,7 +1305,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-cabin.jpg" alt="Cabin Supply">
                             </div>
@@ -776,8 +1324,19 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port can supply Safety and Personal Protective Equipment according to vessel requirements and international standards. Where certification is required, the applicable standard or certificate requirement should be specified in the RFQ. A comprehensive range of safety equipment and PPE ensures the well-being of the crew and compliance with maritime safety regulations. The ship supply service prioritizes the availability of certified safety gear, including hard hats, safety harnesses, and fire-fighting related products. Sourcing durable coveralls, protective gloves, and respiratory protection is essential for hazardous onboard tasks. Ensuring strict adherence to SOLAS and international safety standards protects the crew and mitigates operational risks at sea.</p>
-                                    <a href="request-quote.html?category=safety" class="btn btn-primary">Order Safety & PPE <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port can supply Safety and Personal Protective Equipment
+                                        according to vessel requirements and international standards. Where
+                                        certification is required, the applicable standard or certificate requirement
+                                        should be specified in the RFQ. A comprehensive range of safety equipment and
+                                        PPE ensures the well-being of the crew and compliance with maritime safety
+                                        regulations. The ship supply service prioritizes the availability of certified
+                                        safety gear, including hard hats, safety harnesses, and fire-fighting related
+                                        products. Sourcing durable coveralls, protective gloves, and respiratory
+                                        protection is essential for hazardous onboard tasks. Ensuring strict adherence
+                                        to SOLAS and international safety standards protects the crew and mitigates
+                                        operational risks at sea.</p>
+                                    <a href="request-quote.html?category=safety" class="btn btn-primary">Order Safety &
+                                        PPE <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -797,7 +1356,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-safety.jpg" alt="Safety Supply">
                             </div>
@@ -816,8 +1375,18 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port sources electrical products and consumables for deck, engine-room, and accommodation requirements for commercial vessels across Namibia. High-quality electrical stores, including marine lamps, cables, and circuit breakers, ensure the vessel's electrical systems remain operational and safe. The ship supply service provides essential electrical consumables, such as fuses, relays, and contactors, to support routine maintenance and emergency repairs. Sourcing specialized marine electronics and robust electrical tools allows the engineering team to troubleshoot and resolve technical issues efficiently. Reliable electrical supply ensures uninterrupted power and navigation capabilities throughout the voyage.</p>
-                                    <a href="request-quote.html?category=electrical" class="btn btn-primary">Order Electrical Stores <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port sources electrical products and consumables for deck,
+                                        engine-room, and accommodation requirements for commercial vessels across
+                                        Namibia. High-quality electrical stores, including marine lamps, cables, and
+                                        circuit breakers, ensure the vessel's electrical systems remain operational and
+                                        safe. The ship supply service provides essential electrical consumables, such as
+                                        fuses, relays, and contactors, to support routine maintenance and emergency
+                                        repairs. Sourcing specialized marine electronics and robust electrical tools
+                                        allows the engineering team to troubleshoot and resolve technical issues
+                                        efficiently. Reliable electrical supply ensures uninterrupted power and
+                                        navigation capabilities throughout the voyage.</p>
+                                    <a href="request-quote.html?category=electrical" class="btn btn-primary">Order
+                                        Electrical Stores <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -838,7 +1407,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-spares.jpg" alt="Electrical Supply">
                             </div>
@@ -857,8 +1426,19 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>At Ship Chandler Namibia Port, Marine and industrial chemicals can be supplied for vessel maintenance, water treatment, and operational requirements. Product specifications and Safety Data Sheets (SDS) can be provided where applicable. Ship Chandler Namibia Port sources quality marine chemicals, including degreasers and tank cleaning products, to maintain vessel hygiene and operational readiness. The vessel supply service ensures the availability of specialized descaling chemicals and water-treatment solutions essential for engine room efficiency. Providing safe and effective maintenance chemicals, along with necessary documentation, supports the crew in performing critical cleaning and preservation tasks. Reliable access to marine chemicals maintains a safe and compliant working environment onboard.</p>
-                                    <a href="request-quote.html?category=chemicals" class="btn btn-primary">Order Marine Chemicals <i class="fas fa-arrow-right"></i></a>
+                                    <p>At Ship Chandler Namibia Port, Marine and industrial chemicals can be supplied
+                                        for vessel maintenance, water treatment, and operational requirements. Product
+                                        specifications and Safety Data Sheets (SDS) can be provided where applicable.
+                                        Ship Chandler Namibia Port sources quality marine chemicals, including
+                                        degreasers and tank cleaning products, to maintain vessel hygiene and
+                                        operational readiness. The vessel supply service ensures the availability of
+                                        specialized descaling chemicals and water-treatment solutions essential for
+                                        engine room efficiency. Providing safe and effective maintenance chemicals,
+                                        along with necessary documentation, supports the crew in performing critical
+                                        cleaning and preservation tasks. Reliable access to marine chemicals maintains a
+                                        safe and compliant working environment onboard.</p>
+                                    <a href="request-quote.html?category=chemicals" class="btn btn-primary">Order Marine
+                                        Chemicals <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -874,7 +1454,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-marine-chemicals.jpg" alt="Chemicals Supply">
                             </div>
@@ -893,8 +1473,18 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port can source a comprehensive range of welding and cutting materials for onboard maintenance and repair operations in Namibian ports. Quality welding equipment, including electrodes, wires, and cutting discs, supports the vessel's crew in performing essential repairs and fabrication tasks safely and effectively. The ship supply service ensures the availability of robust welding accessories, regulators, and personal protective equipment. Sourcing reliable cutting and welding equipment is critical for structural maintenance and emergency repairs at sea. Access to industrial and marine gases, subject to local regulations, ensures the vessel's workshop remains fully operational for critical fabrication work.</p>
-                                    <a href="request-quote.html?category=welding" class="btn btn-primary">Order Welding Equipment <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port can source a comprehensive range of welding and
+                                        cutting materials for onboard maintenance and repair operations in Namibian
+                                        ports. Quality welding equipment, including electrodes, wires, and cutting
+                                        discs, supports the vessel's crew in performing essential repairs and
+                                        fabrication tasks safely and effectively. The ship supply service ensures the
+                                        availability of robust welding accessories, regulators, and personal protective
+                                        equipment. Sourcing reliable cutting and welding equipment is critical for
+                                        structural maintenance and emergency repairs at sea. Access to industrial and
+                                        marine gases, subject to local regulations, ensures the vessel's workshop
+                                        remains fully operational for critical fabrication work.</p>
+                                    <a href="request-quote.html?category=welding" class="btn btn-primary">Order Welding
+                                        Equipment <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -912,7 +1502,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-welding.jpg" alt="Welding Supply">
                             </div>
@@ -931,8 +1521,19 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Procurement team at Ship Chandler Namibia Port can assist with standard and non-standard marine spare parts and technical equipment. For faster identification, please provide maker, equipment model, serial number, OEM part number, IMPA reference, dimensions, drawings, or clear photographs. Sourcing quality marine spare parts for main engines, pumps, and compressors is critical to minimizing vessel downtime and ensuring operational reliability. The technical procurement service specializes in identifying exact replacement components, including electric motors, refrigeration parts, and hydraulic equipment. Reliable access to OEM and alternative spare parts supports the engineering department in executing timely overhauls and repairs, keeping the vessel compliant and operational.</p>
-                                    <a href="request-quote.html?category=spare-parts" class="btn btn-primary">Order Spare Parts <i class="fas fa-arrow-right"></i></a>
+                                    <p>Procurement team at Ship Chandler Namibia Port can assist with standard and
+                                        non-standard marine spare parts and technical equipment. For faster
+                                        identification, please provide maker, equipment model, serial number, OEM part
+                                        number, IMPA reference, dimensions, drawings, or clear photographs. Sourcing
+                                        quality marine spare parts for main engines, pumps, and compressors is critical
+                                        to minimizing vessel downtime and ensuring operational reliability. The
+                                        technical procurement service specializes in identifying exact replacement
+                                        components, including electric motors, refrigeration parts, and hydraulic
+                                        equipment. Reliable access to OEM and alternative spare parts supports the
+                                        engineering department in executing timely overhauls and repairs, keeping the
+                                        vessel compliant and operational.</p>
+                                    <a href="request-quote.html?category=spare-parts" class="btn btn-primary">Order
+                                        Spare Parts <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -952,7 +1553,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-spares.jpg" alt="Spare Parts Supply">
                             </div>
@@ -971,8 +1572,17 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port can assist vessels with nautical charts, marine publications, and operational reference materials required for their voyage. Access to up-to-date nautical charts and publications is essential for safe navigation and compliance with international maritime regulations. The ship supply service provides official vessel logbooks and record books to ensure mandatory documentation is accurately maintained. Sourcing the latest IMO, SOLAS, MARPOL, and STCW publications guarantees the vessel operates within current legal frameworks. Reliable supply of navigational notices and flag sets supports safe and efficient global transit.</p>
-                                    <a href="request-quote.html?category=publications" class="btn btn-primary">Order Publications <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port can assist vessels with nautical charts, marine
+                                        publications, and operational reference materials required for their voyage.
+                                        Access to up-to-date nautical charts and publications is essential for safe
+                                        navigation and compliance with international maritime regulations. The ship
+                                        supply service provides official vessel logbooks and record books to ensure
+                                        mandatory documentation is accurately maintained. Sourcing the latest IMO,
+                                        SOLAS, MARPOL, and STCW publications guarantees the vessel operates within
+                                        current legal frameworks. Reliable supply of navigational notices and flag sets
+                                        supports safe and efficient global transit.</p>
+                                    <a href="request-quote.html?category=publications" class="btn btn-primary">Order
+                                        Publications <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -984,7 +1594,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-nautical.jpg" alt="Publications Supply">
                             </div>
@@ -1003,8 +1613,18 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>Ship Chandler Namibia Port's supply range includes hand tools, power tools, cutting tools, measuring equipment, fasteners, and general marine hardware for routine maintenance and emergency repairs. Ship Chandler Namibia Port ensures that quality tools and marine hardware are readily available to support the vessel's crew in maintaining operational efficiency and safety. The vessel supply service provides durable hand tools and precision measuring equipment essential for engine room and deck tasks. Sourcing high-grade fasteners, drill bits, and abrasives ensures the workshop is prepared for challenging repair jobs. Access to professional-grade hardware and power tools enhances the crew's ability to perform complex maintenance tasks efficiently.</p>
-                                    <a href="request-quote.html?category=tools" class="btn btn-primary">Order Tools & Hardware <i class="fas fa-arrow-right"></i></a>
+                                    <p>Ship Chandler Namibia Port's supply range includes hand tools, power tools,
+                                        cutting tools, measuring equipment, fasteners, and general marine hardware for
+                                        routine maintenance and emergency repairs. Ship Chandler Namibia Port ensures
+                                        that quality tools and marine hardware are readily available to support the
+                                        vessel's crew in maintaining operational efficiency and safety. The vessel
+                                        supply service provides durable hand tools and precision measuring equipment
+                                        essential for engine room and deck tasks. Sourcing high-grade fasteners, drill
+                                        bits, and abrasives ensures the workshop is prepared for challenging repair
+                                        jobs. Access to professional-grade hardware and power tools enhances the crew's
+                                        ability to perform complex maintenance tasks efficiently.</p>
+                                    <a href="request-quote.html?category=tools" class="btn btn-primary">Order Tools &
+                                        Hardware <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Available Items</h4>
@@ -1018,7 +1638,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="content-image-full">
                                 <img src="./assets/imgs/service-hardwares-tools.jpg" alt="Tools Supply">
                             </div>
@@ -1037,8 +1657,18 @@
                         <div class="service-content">
                             <div class="content-inner">
                                 <div class="content-text">
-                                    <p>At Ship Chandler Namibia Port, Vessel schedules can change quickly. For urgent requirements, Ship Chandler Namibia Port can coordinate procurement and delivery according to the vessel ETA, berth availability, port access, and local operating conditions. Urgent enquiries should clearly indicate the required delivery deadline so that availability and logistics can be assessed immediately to prevent vessel delays. The ship chandler service prioritizes rapid response and efficient sourcing of critical items, including emergency provisions and technical spares. Coordination with port agents and launch boats ensures rapid dispatch to the vessel's berth or outer anchorage, resolving last-minute shortages quickly.</p>
-                                    <a href="request-quote.html?category=urgent" class="btn btn-primary">Order Urgent Supply <i class="fas fa-arrow-right"></i></a>
+                                    <p>At Ship Chandler Namibia Port, Vessel schedules can change quickly. For urgent
+                                        requirements, Ship Chandler Namibia Port can coordinate procurement and delivery
+                                        according to the vessel ETA, berth availability, port access, and local
+                                        operating conditions. Urgent enquiries should clearly indicate the required
+                                        delivery deadline so that availability and logistics can be assessed immediately
+                                        to prevent vessel delays. The ship chandler service prioritizes rapid response
+                                        and efficient sourcing of critical items, including emergency provisions and
+                                        technical spares. Coordination with port agents and launch boats ensures rapid
+                                        dispatch to the vessel's berth or outer anchorage, resolving last-minute
+                                        shortages quickly.</p>
+                                    <a href="request-quote.html?category=urgent" class="btn btn-primary">Order Urgent
+                                        Supply <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="content-list">
                                     <h4><i class="fas fa-list-check"></i> Service Highlights</h4>
@@ -1068,7 +1698,8 @@
                 <!-- Brand Column -->
                 <div class="footer-brand">
                     <img src="assets/imgs/logo-shipchandler-namibia.png" alt="Ship Chandler Namibia Logo">
-                    <p>SHIP CHANDLER NAMIBIA CO., LTD is a licensed marine supplier providing provisions, technical stores, bonded goods, and emergency vessel supply across all Namibian ports and anchorages.</p>
+                    <p>SHIP CHANDLER NAMIBIA CO., LTD is a licensed marine supplier providing provisions, technical
+                        stores, bonded goods, and emergency vessel supply across all Namibian ports and anchorages.</p>
                 </div>
 
                 <!-- Links Column -->
@@ -1087,16 +1718,26 @@
                 <div class="footer-col">
                     <h4>Contact Details</h4>
                     <ul class="footer-contact-card" style="list-style: none; padding: 40px 32px;">
-                        <li style="display:flex; gap:16px; margin-bottom:24px;"><i class="fas fa-map-marker-alt" style="color:var(--amber); margin-top:4px;"></i> <span style="color:var(--sand-dark);">17 Rikumbi Kandanga Road, Walvis Bay, Namibia</span></li>
-                        <li style="display:flex; gap:16px; margin-bottom:24px;"><i class="fas fa-envelope" style="color:var(--amber); margin-top:4px;"></i> <a href="mailto:sales@shipchandlernamibia.com" style="color:var(--sand-dark);">sales@shipchandlernamibia.com</a></li>
-                        <li style="display:flex; gap:16px; margin-bottom:24px;"><i class="fas fa-user-tie" style="color:var(--amber); margin-top:4px;"></i> <span style="color:var(--sand-dark);">Petrus Johannes</span></li>
-                        
+                        <li style="display:flex; gap:16px; margin-bottom:24px;"><i class="fas fa-map-marker-alt"
+                                style="color:var(--amber); margin-top:4px;"></i> <span
+                                style="color:var(--sand-dark);">17 Rikumbi Kandanga Road, Walvis Bay, Namibia</span>
+                        </li>
+                        <li style="display:flex; gap:16px; margin-bottom:24px;"><i class="fas fa-envelope"
+                                style="color:var(--amber); margin-top:4px;"></i> <a
+                                href="mailto:sales@shipchandlernamibia.com"
+                                style="color:var(--sand-dark);">sales@shipchandlernamibia.com</a></li>
+                        <li style="display:flex; gap:16px; margin-bottom:24px;"><i class="fas fa-user-tie"
+                                style="color:var(--amber); margin-top:4px;"></i> <span
+                                style="color:var(--sand-dark);">Petrus Johannes</span></li>
+
                         <!-- Custom WhatsApp Button -->
                         <li style="display:block;">
-                            <a class="hero-whatsapp-bar" href="https://wa.me/2482743244" target="_blank" rel="noopener noreferrer" aria-label="Direct WhatsApp contact (+248) 2 743 244">
+                            <a class="hero-whatsapp-bar" href="https://wa.me/2482743244" target="_blank"
+                                rel="noopener noreferrer" aria-label="Direct WhatsApp contact (+248) 2 743 244">
                                 <span class="hero-whatsapp-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                                     </svg>
                                 </span>
                                 <span class="hero-whatsapp-tag">WhatsApp:</span>
@@ -1109,7 +1750,8 @@
             </div>
 
             <div class="footer-bottom">
-                <div style="text-align:center; width:100%;">&copy; 2026 SHIP CHANDLER NAMIBIA CO., LTD. All rights reserved.</div>
+                <div style="text-align:center; width:100%;">&copy; 2026 SHIP CHANDLER NAMIBIA CO., LTD. All rights
+                    reserved.</div>
             </div>
         </div>
     </footer>
